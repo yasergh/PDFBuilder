@@ -31,7 +31,7 @@ class PDFBuilderServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/Templates' => resource_path('views/pdf-builder'),
             __DIR__ . '/Config/pdf.php' => config_path('pdf.php'),
-        ], 'invoice-maker');
+        ], 'pdf-builder');
     }
 
     /**
