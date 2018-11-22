@@ -1,0 +1,74 @@
+{
+
+	"name": "snono/pdf-builder",
+	"type": "library",
+
+	"description": "A PHP class to generate PDF files from HTML with Unicode/UTF-8 and CJK support",
+
+	"keywords": ["php", "pdf", "utf-8"],
+
+
+	"license": ["GPL-2.0-only"],
+
+	"authors": [
+		{
+			"name": "Yaser Ghanawi",
+            "email": "yaser@snono-systems.com",
+			"role": "Developer, maintainer"
+		}
+	],
+
+
+
+	"require": {
+
+        "php": ">=5.4.0",
+        "ext-bcmath": "*",
+        "illuminate/support": "5.*",
+        "illuminate/view": "5.*",
+        "mpdf/mpdf": "^7.1"
+
+	},
+
+	"require-dev": {
+
+		"phpunit/phpunit": "^5.0",
+		"squizlabs/php_codesniffer": "^2.7.0"
+
+
+	},
+
+	"suggest": {
+
+		"ext-bcmath": "Needed for generation of some types of barcodes",
+		"ext-zlib": "Needed for compression of embedded resources, such as fonts",
+		"ext-xml": "Needed mainly for SVG manipulation"
+
+	},
+
+	"autoload": {
+
+		"psr-4": {
+            "Snono\\PDFBuilder\\" : "src/"
+		}
+
+	},
+
+	"scripts": {
+		"post-install-cmd": [
+			"php -r \"chmod('./tmp', 0777);\""
+		]
+	},
+
+	"extra": {
+		"branch-alias": {
+			"dev-development": "1.x-dev"
+		},
+        "laravel": {
+            "providers": [
+                "Snono\\PDFBuilder\\Builder\\PDFBuilderServiceProvider"
+            ]
+        }
+	}
+
+}
