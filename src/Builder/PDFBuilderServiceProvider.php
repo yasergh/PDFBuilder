@@ -26,7 +26,7 @@ class PDFBuilderServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__ . '/Templates', 'pdf-builder');
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'pdf-builder');
 
         $this->publishes([
             __DIR__ . '/Templates' => resource_path('views/pdf-builder'),

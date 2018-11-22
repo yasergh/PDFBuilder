@@ -218,7 +218,7 @@ class PDFBuilder
         $this->mpdf->img_dpi = 150;
         $emogrifier = new Emogrifier();
 
-        $html = View::make('pdf-builder::'.$this->getTemplate(), ['data' => $this->getData()])->render();
+        $html = View::make($this->getTemplate(), ['data' => $this->getData()])->render();
         $emogrifier->setHtml($html);
         $emogrifier->setCss($this->getCssUrls());
 
