@@ -9,7 +9,6 @@ use Illuminate\Support\Collection;
  * This is the Setters trait.
  *
  * @author Yaser ghanawi
- *
  */
 trait Getters
 {

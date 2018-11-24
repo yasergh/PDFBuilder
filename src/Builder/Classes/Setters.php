@@ -26,13 +26,14 @@ trait Setters
     {
         try {
             foreach ($urls as $url) {
-//                $text = file_get_contents($url);
-//                if (false === $text){
-//                 throw new \Exception('Error get file content :' .$url);
-//                }
+                $text = file_get_contents($url);
+                if (false === $text){
+                 throw new \Exception('Error get file content :' .$url);
+                }
 
                 // proceed with your text, e.g. concatinating it:
-                $this->_cssFiles .= Utility::file_get_contents_curl($url);
+//                $this->_cssFiles .= Utility::file_get_contents_curl($url);
+                $this->_cssFiles .= $text;
             }
 
         }catch (\Exception $e){

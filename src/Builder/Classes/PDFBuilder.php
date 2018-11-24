@@ -15,7 +15,6 @@ use Storage;
  * This is the report-builder class.
  *
  * @author Yaser Ghanawi
- *
  */
 class PDFBuilder
 {
