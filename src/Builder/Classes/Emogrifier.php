@@ -15,6 +15,7 @@ namespace Snono\PDFBuilder\Builder\Classes;
  * @author Roman Ožana <ozana@omdesign.cz>
  * @author Sander Kruger <s.kruger@invessel.com>
  * @author Zoli Szabó <zoli.szabo+github@gmail.com>
+ *
  */
 class Emogrifier
 {
