@@ -24,16 +24,20 @@ trait Setters
      */
     public function setCssUrls($urls)
     {
-        foreach($urls as $url)
-        {
-            $text = file_get_contents($url);
-            if (false === $text)
-                continue;
+        try {
+            foreach ($urls as $url) {
+//                $text = file_get_contents($url);
+//                if (false === $text){
+//                 throw new \Exception('Error get file content :' .$url);
+//                }
 
-            // proceed with your text, e.g. concatinating it:
-            $this->_cssFiles .= $text;
+                // proceed with your text, e.g. concatinating it:
+                $this->_cssFiles .= Utility::file_get_contents_curl($url);
+            }
+
+        }catch (\Exception $e){
+            Log::error($e->getMessage());
         }
-
         return $this;
     }
 
@@ -254,7 +258,7 @@ trait Setters
      */
     public function setData($data)
     {
-        $this->_pdf_data = Collection::make($data);
+        $this->_pdf_data =$data;
 
         return $this;
     }
