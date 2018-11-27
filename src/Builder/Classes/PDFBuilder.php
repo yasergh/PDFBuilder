@@ -146,14 +146,14 @@ class PDFBuilder
      *
      * @param string $name
      */
-    public function __construct($name = 'pdf-builder')
+    public function __construct($name = 'pdf')
     {
         $this->_pdf_data = Collection::make([]);
-        $this->_mode = config('pdf-builder.mode');
-        $this->_format = config('pdf-builder.format');
-        $this->_display_mode = config('pdf-builder.display_mode');
-        $this->_tempDir = config('pdf-builder.tempDir');
-        $this->_unAGlyphs = config('pdf-builder.unAGlyphs');
+        $this->_mode = config($name.'.mode');
+        $this->_format = config($name.'.format');
+        $this->_display_mode = config($name.'.display_mode');
+        $this->_tempDir = config($name.'.tempDir');
+        $this->_unAGlyphs = config($name.'.unAGlyphs');
         $this->_htmlFooter = Collection::make([]);
         $this->_htmlHeater = Collection::make([]);
 
@@ -168,7 +168,7 @@ class PDFBuilder
      *
      * @return Snono\ReportBuilder\Classes\ReportBuilder
      */
-    public static function make($name = 'pdf-builder')
+    public static function make($name = 'pdf')
     {
         return new self($name);
     }
