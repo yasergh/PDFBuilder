@@ -36,7 +36,7 @@ return [
     |
     */
 
-   'tempDir' => base_path('../temp/'),
+   'tempDir' => storage_path('app/public/'),
 
 
   /*
