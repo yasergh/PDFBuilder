@@ -23,7 +23,6 @@
 	"require": {
 
         "php": ">=5.4.0",
-        "ext-bcmath": "*",
         "illuminate/support": "5.*",
         "illuminate/view": "5.*",
         "mpdf/mpdf": "^7.1"
@@ -62,7 +61,7 @@
 
 	"extra": {
 		"branch-alias": {
-			"dev-development": "1.1-dev"
+			"dev-development": "1.2-dev"
 		},
         "laravel": {
             "providers": [
