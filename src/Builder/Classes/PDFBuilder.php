@@ -264,7 +264,7 @@ class PDFBuilder
     {
         $this->generate();
 
-        return $this->mpdf->Output($name , \Mpdf\Output\Destination::DOWNLOAD);
+        return $this->mpdf->Output($name , 'D');
     }
 
     /**
@@ -279,7 +279,7 @@ class PDFBuilder
     {
         $invoice = $this->generate();
 
-        Storage::put($name, $invoice->mpdf->Output($name , Mpdf\Output\Destination::FILE));
+        Storage::put($name, $invoice->mpdf->Output($name , 'F'));
     }
 
     /**
@@ -295,7 +295,7 @@ class PDFBuilder
     {
         $this->generate();
 
-        return $this->mpdf->Output($name, \Mpdf\Output\Destination::INLINE);
+        return $this->mpdf->Output($name, 'I');
     }
 
     /**
@@ -311,7 +311,7 @@ class PDFBuilder
     {
         $this->generate();
 
-        return $this->mpdf->Output(null, \Mpdf\Output\Destination::STRING_RETURN);
+        return $this->mpdf->Output(null, 'S');
     }
 
 }
