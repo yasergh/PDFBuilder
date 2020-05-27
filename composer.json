@@ -23,8 +23,7 @@
 	"require": {
 
         "php": ">=5.4.0",
-        "illuminate/support": ">=5.*",
-        "illuminate/view": ">=5.*",
+
         "mpdf/mpdf": ">=7.1"
 
 	},
